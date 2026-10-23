@@ -24,4 +24,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: mkdir testmachine, uname -a > testmachine/output.txt
+        run: mkdir testmachine && uname -a > testmachine/output.txt
+      - name: Verify output file
+        run: cat testmachine/output.txt
+      - name: Verify directory contents
+        run: ls -alhR
